@@ -3,6 +3,6 @@ const greet = require (__dirname + '/../lib/greet.js');
 
 describe('greet', () => {
   it('should greet the user', () => {
-    expect(greet('Slothbear')).to.eql('Hello Slothbear');
+    expect(greet.hello('Slothbear')).to.eql('Hello Slothbear');
   });
 });
