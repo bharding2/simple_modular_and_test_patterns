@@ -3,6 +3,7 @@ const greet = module.exports = function(name) {
 };
 
 var name = 'Slothbear';
+var argv = process.argv[2];
 
-if (process.argv[2]) name = process.argv[2];
+if (argv) name = argv;
 console.log(greet(name));
