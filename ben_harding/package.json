@@ -1,0 +1,29 @@
+{
+  "name": "slothbear_greet",
+  "version": "1.0.0",
+  "description": "a greeting app with a decidedly slothbear bent",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+  "greet": "./bin/greet"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "keywords": [
+    "sloth",
+    "bear",
+    "slothbear"
+  ],
+  "author": "b.harding@gmail.com",
+  "license": "MIT"
+}
