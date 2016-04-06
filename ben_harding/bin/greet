@@ -2,8 +2,8 @@
 
 var greet = require(__dirname + '/../lib/greet');
 
-var greetCli = module.exports = function() {
+var greetCliArgs = module.exports = function() {
   return greet(process.argv[2]);
 };
 
-console.log(greetCli());
+console.log(greetCliArgs());

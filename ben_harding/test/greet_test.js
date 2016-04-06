@@ -1,34 +1,41 @@
 const expect = require('chai').expect;
 const greet = require (__dirname + '/../lib/greet.js');
 
-describe('greet function', () => {
+describe('greet module stuff', () => {
   it('should greet the user', () => {
     expect(greet('Slothbear')).to.eql('Hello Slothbear');
   });
 });
 
-describe('greet cli', () => {
-  before(() => {
-    this.processBackup = process.argv;
-    process.argv = [null, null, 'wat'];
-  });
+describe('greet cli stuff', () => {
+  var greetCliResult = require(__dirname + '/../bin/greet');
 
-  after(() => {
-    process.argv = this.processBackup;
-  });
+  describe('with arguments', () => {
+    before(() => {
+      this.processBackup = process.argv;
+      process.argv = [null, null, 'wat'];
+    });
 
-  it('should greet wat', () => {
-    var greetCliResult = require(__dirname + '/../bin/greet');
-    expect(greetCliResult()).to.eql('Hello wat');
+    after(() => {
+      process.argv = this.processBackup;
+    });
+
+    it('should greet wat', () => {
+      expect(greetCliResult()).to.eql('Hello wat');
+    });
   });
 
   describe('with no arguments', () => {
     before(() => {
+      this.processBackup = process.argv;
       process.argv = [];
     });
 
+    after(() => {
+      process.argv = this.processBackup;
+    });
+
     it('should greet the Slothbear', () => {
-      var greetCliResult = require(__dirname + '/../bin/greet');
       expect(greetCliResult()).to.eql('Hello Slothbear');
     });
   });

@@ -9,17 +9,9 @@ gulp.task('test:mocha', () => {
     .pipe(mocha());
 });
 
-gulp.task('lint:test', () => {
+gulp.task('lint:testing', () => {
   return gulp.src('./test/**/*test.js')
-    .pipe(eslint({
-      globals: {
-        describe: true,
-        it: true,
-        after: true,
-        beforeEach: true,
-        afterEach: true
-      }
-    }))
+    .pipe(eslint())
     .pipe(eslint.format());
 });
 
@@ -30,4 +22,8 @@ gulp.task('lint:slothbear_greet', () => {
 });
 
 gulp.task('test', ['test:mocha']);
-gulp.task('lint', ['lint:test', 'lint:slothbear_greet']);
+gulp.task('lint', ['lint:testing', 'lint:slothbear_greet']);
+
+gulp.task('watch', () => {
+  gulp.watch(files, ['test', 'lint']);
+});
