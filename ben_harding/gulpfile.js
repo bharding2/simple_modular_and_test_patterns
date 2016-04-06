@@ -29,7 +29,8 @@ gulp.task('lint:slothbear_greet', () => {
 
 gulp.task('test', ['test:mocha']);
 gulp.task('lint', ['lint:testing', 'lint:slothbear_greet']);
-
 gulp.task('watch', () => {
   gulp.watch(files, ['test', 'lint']);
 });
+
+gulp.task('default', ['watch', 'lint', 'test']);
