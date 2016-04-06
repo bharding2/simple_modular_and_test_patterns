@@ -1,0 +1,10 @@
+{
+  "extends": "google",
+  "envs": [
+    "es6",
+    "node"
+  ],
+  "rules": {
+    "no-path-concat": 0
+  }
+}

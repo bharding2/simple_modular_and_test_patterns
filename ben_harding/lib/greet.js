@@ -1,3 +1,3 @@
 module.exports = exports = function(name) {
-    return 'Hello ' + (name || 'Slothbear');
+  return 'Hello ' + (name || 'Slothbear');
 };

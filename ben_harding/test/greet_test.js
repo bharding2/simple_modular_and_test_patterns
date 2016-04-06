@@ -1,7 +1,7 @@
-/*eslint-env mocha */
+/* eslint-env mocha */
 
 const expect = require('chai').expect;
-const greet = require (__dirname + '/../lib/greet.js');
+const greet = require(__dirname + '/../lib/greet.js');
 
 describe('greet module stuff', () => {
   it('should greet the user', () => {
