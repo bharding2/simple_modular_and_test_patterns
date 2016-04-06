@@ -1,10 +1,3 @@
-const greet = module.exports = {
-  hello: function(name) {
-    return 'Hello ' + name;
-  }
+module.exports = exports = function(name) {
+    return 'Hello ' + (name || 'Slothbear');
 };
-
-var name = 'Slothbear';
-
-if (process.argv[2]) name = process.argv[2];
-console.log(greet.hello(name));
