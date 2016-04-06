@@ -11,7 +11,13 @@ gulp.task('test:mocha', () => {
 
 gulp.task('lint:testing', () => {
   return gulp.src('./test/**/*test.js')
-    .pipe(eslint())
+    .pipe(eslint({
+      env: {
+        node: true,
+        mocha: true,
+        es6: true
+      }
+    }))
     .pipe(eslint.format());
 });
 
